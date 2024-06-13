@@ -1,0 +1,275 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative; /* For positioning nav */
+}
+
+.container p {
+    margin: 0; /* Remove default margin */
+    line-height: 1.5; /* Adjust line height if necessary */
+}
+
+header {
+    background-image: url('images/background2.png'); /* Add your background image URL here */
+    background-size: cover;
+    background-position: center; /* Ensures the image is centered */
+    border: none; /* Removes any border */
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+    position: relative; /* For positioning nav */
+}
+
+header p {
+    font-size: 3em;
+    font-weight: 400%;
+}
+
+.nav {
+    position: absolute;
+    margin-top: -70px;
+    right: -10px;
+}
+
+.nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 60px;
+}
+
+.nav ul li {
+    display: inline;
+}
+
+.nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    transition: color 0.3s;
+}
+
+.nav ul li a:hover {
+    color: #ffcc00; /* Change color on hover */
+}
+
+
+.highlight {
+    background-color:rgb(235, 220, 176);
+    color: rgb(255, 255, 255); /* Adjust color if necessary */
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-top: 100px;
+
+}
+
+.about {
+    background-color: rgb(235, 220, 176); /* Pastel peach */
+    padding: 60px 0;
+    text-align: center;
+
+}
+
+.about h2 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.about p {
+    font-size: 1.1em;
+    color: #555;
+    margin-left: 40px;
+    margin-right: 40px;
+    font-family: 'Playfair Display';
+}
+.projects {
+    background-image: url('images/background1.png'); /* Correct relative path */
+    padding: 40px 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.projects h2 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.project {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 25px;
+    overflow: hidden; /* Ensure hidden overflow for sliding effect */
+}
+
+.project .collage {
+    display: flex;
+    transition: transform 0.5s ease; /* Smooth transition for sliding */
+    width: 200%; /* Double the width to accommodate two slides */
+}
+
+.project .slide {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three columns per slide */
+    grid-template-rows: repeat(2, 400px); /* Two rows per slide */
+    gap: 25px;
+    width: 50%; /* Each slide takes half the width of the collage */
+}
+
+.project .image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.project .image img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 5px; /* Same rounding for the image itself */
+    object-fit: contain; /* Ensures the entire image is visible within the container */
+}
+
+.pagination {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center; /* Center the pagination buttons */
+    gap: 10px; /* Space between the buttons */
+}
+
+.pagination button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #333;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.pagination button:disabled {
+    background-color: #aaa;
+    cursor: not-allowed;
+}
+
+.additional {
+    background-color: #f0f5f9; /* Light blue */
+    padding: 50px 0;
+}
+
+.container-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px; /* Add gap between containers */
+}
+
+.container-box {
+    flex: 1;
+    padding: 20px;
+    border-radius: 15px;
+    border: none;
+    height: 330px;
+    position: relative;
+    margin: 20px;
+    width: 1000px;
+}
+
+.container-box:nth-child(1) {
+    background-color: #d0f0c0; 
+    top: 60px;/* Lighter orange */
+    
+}
+
+.container-box:nth-child(2) {
+    background-color: #ad8b58; /* Lighter teal */
+}
+
+.container-box:nth-child(3) {
+    background-color: #eabdb3;
+    top: 60px; /* Lighter coral */
+}
+
+.container-box:nth-child(4) {
+    background-color: #f6ef8c; /* Lighter green */
+}
+
+.black-box img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+
+.black-box p 
+{
+    text-align: center;
+    font-family: Arial;
+    margin-top: 10px;
+
+}
+
+
+.black-box .img2 {
+    margin-top: -80px;
+    padding: 5px;
+}
+
+.black-box .img2 img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    margin-top: 10px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+}
+
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+footer .social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+footer .social-icons a {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    color: #fff; /* Set the color of the links */
+}
+
+footer .social-icons img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
