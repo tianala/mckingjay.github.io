@@ -12,7 +12,7 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background: url('https://wallpapercave.com/dwp1x/wp11337025.png') no-repeat center center fixed;
+            background: url('images/background3.png') no-repeat center center fixed;
             background-size: cover;
             position: relative;
             z-index: 1;
@@ -196,6 +196,22 @@
                 font-size: 14px; /* Adjust font size */
             }
         }
+
+        @media only screen and (max-width: 600px) {
+          .container {
+              width: 60%;
+              height: auto;
+              padding: 20px;
+          }
+
+          input {
+              width: 80%;
+          }
+
+          .visibility-toggle {
+              right: -20px;
+          }
+      }
     </style>
 </head>
 <body>
