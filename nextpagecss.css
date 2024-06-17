@@ -25,12 +25,17 @@ header {
     padding: 100px 0;
     text-align: center;
     position: relative; /* For positioning nav */
+    z-index: 2; 
 }
 
 header p {
     font-size: 3em;
-    font-weight: 400%;
+    font-weight: 400; /* Corrected from 400% to 400 */
+    position: relative;
+    z-index: 2;
 }
+
+
 
 .nav {
     position: absolute;
@@ -93,7 +98,7 @@ header p {
     font-family: 'Playfair Display';
 }
 .projects {
-    background-image: url('images/background1.png'); /* Correct relative path */
+    background-color:#fff; /* Correct relative path */
     padding: 40px 0;
     background-size: cover;
     background-repeat: no-repeat;
@@ -165,7 +170,7 @@ header p {
 }
 
 .additional {
-    background-image: url('images/background4.png');
+    background-color: #838383;
     padding: 50px 0;
 }
 
@@ -174,7 +179,7 @@ header p {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    gap: 20px; /* Add gap between containers */
+    gap: 60px; /* Add gap between containers */
 }
 
 .container-box {
@@ -185,44 +190,95 @@ header p {
     height: 330px;
     position: relative;
     margin: 20px;
-    width: 1000px;
+    width: 300px;
+    margin-left: -20px;
+    margin-right: -20px;
+    perspective: 1000px; /* Enable 3D space for flipping */
 }
 
-.container-box:nth-child(1) {
+.flip-container {
+    position: relative; /* Position absolute to maintain the same position when flipped */
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.flip-container.flipped {
+    transform: rotateY(180deg);
+}
+
+.front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.back {
+    transform: rotateY(180deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial;
+    font-size: 20px;
+}
+
+.container-box:nth-child(1) .front {
     background-color: #d0f0c0; 
-    top: 60px;/* Lighter orange */
-    
 }
 
-.container-box:nth-child(2) {
-    background-color: #ad8b58; /* Lighter teal */
+.container-box:nth-child(2) .front {
+    background-color: #e0bb84; /* Lighter teal */
 }
 
-.container-box:nth-child(3) {
+.container-box:nth-child(3) .front {
     background-color: #eabdb3;
-    top: 60px; /* Lighter coral */
 }
 
-.container-box:nth-child(4) {
+.container-box:nth-child(4) .front {
     background-color: #f6ef8c; /* Lighter green */
+}
+
+.container-box:nth-child(5) .front {
+    background-color: #9bbfdf; /* Lighter green */
+}
+
+
+.container-box:nth-child(1) .back {
+    background-color: #d0f0c0; 
+}
+
+.container-box:nth-child(2) .back {
+    background-color: #e0bb84; /* Lighter teal */
+}
+
+.container-box:nth-child(3) .back {
+    background-color: #eabdb3;
+}
+
+.container-box:nth-child(4) .back {
+    background-color: #f6ef8c; /* Lighter green */
+}
+
+.container-box:nth-child(5) .back {
+    background-color: #9bbfdf; /* Lighter green */
 }
 
 .black-box img {
     max-width: 100%;
-    max-height: 100%;
+    max-height: 10%;
     object-fit: cover;
     border-radius: 15px;
 }
 
-
-.black-box p 
-{
+.black-box p {
     text-align: center;
     font-family: Arial;
     margin-top: 10px;
-
 }
-
 
 .black-box .img2 {
     margin-top: -80px;
@@ -235,6 +291,7 @@ header p {
     object-fit: cover;
     margin-top: 10px;
 }
+
 
 footer {
     background-color: rgb(169, 141, 110);
@@ -281,12 +338,46 @@ footer .social-icons img {
     flex-wrap: wrap;
 }
 
-.column-left,
+.column-left {
+    flex: 1;
+    padding: 20px;
+    background-image: url('images/background5\ \(1\).png'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white; /* Text color for better readability */
+}
+
+
+.column-right {
+    flex: 1;
+    padding: 20px;
+    background-color: #fff; /* Background color for the right column */
+}
+
 .column-right {
     flex: 1 1 45%;
     max-width: 45%;
 }
+.column-right h2{
+    text-align: center;
+}
 
+.two-column p{
+    margin: 0; /* Remove default margin */
+    line-height: 1.9; /* Adjust line height if necessary */
+    font-size: 35px;
+}
+
+.highlight1 {
+    background-color:rgb(129, 110, 75);
+    color: rgb(255, 255, 255); /* Adjust color if necessary */
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-top: 100px;
+
+}
 .contact form {
     max-width: 600px;
     margin: 0 auto;
@@ -310,7 +401,7 @@ input, textarea {
 
 button[type="submit"] {
     width: 104%;
-    background: #816e4b;
+    background: rgb(129, 110, 75);
     border: none;
     padding: 15px;
     color: #fff;
@@ -321,4 +412,89 @@ button[type="submit"] {
 
 button[type="submit"]:hover {
     background: #0056b3;
+}
+/* Add these styles to your existing CSS */
+
+@media (max-width: 640px) {
+    header p {
+        font-size: 2em;
+    }
+    .nav ul {
+        flex-direction: row;
+        gap: 40px;
+    }
+    .nav-link {
+        font-size: 1em;
+    }
+    .about h2 {
+        font-size: 1.8em;
+        bottom: -20px;
+    }
+    .about {
+        padding: 20px 0; /* Reduce padding for smaller screens */
+       
+    }
+    .about p {
+        font-size: 0.9em;
+    }
+
+    .container-group {
+        overflow-x: scroll; /* Enable horizontal scrolling */
+        overflow-y: hidden; /* Hide vertical scrollbar */
+         white-space: nowrap; /* Prevent containers from wrapping */
+    }
+
+
+    .container-box {
+        flex: 1;
+        padding: 20px;
+        border-radius: 15px;
+        border: none;
+        height: 330px;
+        position: relative;
+        margin: 20px;
+        width: 300px;
+        margin-left: -20px;
+        margin-right: -20px;
+        perspective: 1000px; /* Enable 3D space for flipping */
+    }
+    
+    
+
+
+    .two-column {
+        padding: 15px 0; /* Reduce padding for very small screens */
+    }
+
+    .two-column .container {
+        padding: 5 10px; /* Add padding for very small screens */
+    }
+
+    .two-column .column-left,
+    .two-column .column-right {
+        padding: 0; /* Remove inner padding for very small screens */
+    }
+
+    .two-column .highlight1 {
+        font-size: 0.5em;
+    }
+
+    .two-column p{
+        margin: 0; /* Remove default margin */
+        line-height: 0.8; /* Adjust line height if necessary */
+        font-size: 55px;
+        margin-right: 10px;
+    }
+
+    footer .social-icons img {
+        width: 85%;
+        height: 85%;
+        display: block;
+    }
+
+    footer p {
+        margin: 0;
+        font-size: 12px;
+    }
+
 }
