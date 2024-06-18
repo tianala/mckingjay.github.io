@@ -169,46 +169,46 @@
     </section>
     
 
-
-    <section class="two-column">
-        <div class="container">
-            <div class="column-left">
-                <br>
-                <br>
-                <br>
-                <br>
-                <p><span class="highlight1">This section is still</span></p>
-                <p><span class="highlight1">under construction </span> </p>
-                <p><span class="highlight1">awaits for our next ubki kiubkuib </span> </p>         
-            </div>
-            <div class="column-right">
-                <h2>Contact</h2>
-                <form action="https://formspree.io/f/mvoeevrq" method="POST">
-                    <div class="form-group">
-                        <label for="name">Name:</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message:</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
-                    </div>
-                    <button type="submit">Submit</button>
-                </form>
-            </div>
+<section class="two-column">
+    <div class="container">
+        <div class="question-icon" onclick="showMessage()">?</div>
+        <div class="column-left"></div>
+        <div class="column-right">
+            <h2>I love to hear your feedback</h2>
+            <form action="https://formspree.io/f/mvoeevrq" method="POST">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
         </div>
-    </section>
+    </div>
+</section>
+    
+    <!-- Message modal -->
+    <div id="messageModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>This is a prompt message with additional information.</p>
+        </div>
+    </div>
     
     <footer>
         <div class="container">
             <p>&copy; 2024 Ala Christian</p>
             <div class="social-icons">
-                <a href="https://www.facebook.com" target="_blank"><img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/facebook-app-round-white-icon.png"></a>
-                <a href="https://www.instagram.com" target="_blank"><img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/instagram-white-icon.png" ></a>
-                <a href="mailto:example@example.com"><img src="images/icon1.png" ></a>
+                <a href="https://www.facebook.com/alachristian28" target="_blank"><img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/facebook-app-round-white-icon.png"></a>
+                <a href="https://www.instagram.com/tian.ijbol/" target="_blank"><img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/instagram-white-icon.png" ></a>
+                <a href="https://github.com/tianala" target="_blank"><img src="images/icon1.png" ></a>
             </div>
         </div>
     </footer>
@@ -256,6 +256,33 @@
                 container.querySelector('.flip-container').classList.toggle('flipped');
             });
         });
+
+
+        var modal = document.getElementById("messageModal");
+        var icon = document.querySelector(".question-icon");
+        var closeBtn = document.querySelector(".close");
+
+        // Show modal when the icon is clicked
+        icon.addEventListener("click", function() {
+            modal.style.display = "flex"; // Use flex to ensure the modal centers properly
+        });
+
+        // Close modal when the close button is clicked
+        closeBtn.addEventListener("click", function() {
+            modal.style.display = "none";
+        });
+
+        // Close modal when clicking outside of it
+        window.addEventListener("click", function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        });
+
+        // Ensure modal is hidden by default
+        window.onload = function() {
+            modal.style.display = "none";
+        };
         
         
         
