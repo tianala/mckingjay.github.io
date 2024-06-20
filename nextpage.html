@@ -62,22 +62,19 @@
     </section>
     
     
-    <section class="additional">
-        <div class="container">
+    <section class="additional1">
+        <div class="container1">
             <h2>Songs that remind me of you</h2>
-            <p>tap for back stories</p>
+            <h4>tap for back stories</h4>
             <div class="container-group">
-    
                 <div class="container-box">
                     <div class="flip-container">
                         <div class="front">
                             <div class="black-box">
-                                <div class="img">
+                                <div class="img1">
                                     <img src="https://images.genius.com/6af041838d6bacdcebb958352361bdd3.1000x1000x1.png" alt="Maki - Dilaw">
-                                </div>
-                                <p>Maki - Dilaw</p>
-                                <div class="img2">
-                                    <img src="https://png.pngtree.com/png-vector/20220728/ourmid/pngtree-png-music-player-background-png-image_6089907.png" alt="Music Player">
+                                    <p>Maki - Dilaw</p>
+                                    <img src="images/icon2.png" alt="Music Player">
                                 </div>
                             </div>
                         </div>
@@ -86,17 +83,15 @@
                         </div>
                     </div>
                 </div>
-    
+
                 <div class="container-box">
                     <div class="flip-container">
                         <div class="front">
                             <div class="black-box">
-                                <div class="img"> 
+                                <div class="img1"> 
                                     <img src="https://images.genius.com/cf1d51894e745d256e7994c84d69d5fd.1000x1000x1.png">
-                                </div>
                                 <p>Tj Monterde - Palagi</p>
-                                <div class="img2">
-                                    <img src="https://png.pngtree.com/png-vector/20220728/ourmid/pngtree-png-music-player-background-png-image_6089907.png" alt="Music Player">
+                                    <img src="images/icon2.png" alt="Music Player">
                                 </div>
                             </div>
                         </div>
@@ -105,17 +100,15 @@
                         </div>
                     </div>
                 </div>
-    
+
                 <div class="container-box">
                     <div class="flip-container">
                         <div class="front">
                             <div class="black-box">
-                                <div class="img">
+                                <div class="img1">
                                     <img src="https://i.scdn.co/image/ab67616d0000b27369c364be39f1f1f81a8faa03">
-                                </div>
                                 <p>Bini - Salamin Salamin</p>
-                                <div class="img2">
-                                    <img src="https://png.pngtree.com/png-vector/20220728/ourmid/pngtree-png-music-player-background-png-image_6089907.png" alt="Music Player">
+                                    <img src="images/icon2.png" alt="Music Player">
                                 </div>
                             </div>
                         </div>
@@ -124,17 +117,15 @@
                         </div>
                     </div>
                 </div>
-    
+
                 <div class="container-box">
                     <div class="flip-container">
                         <div class="front">
                             <div class="black-box">
-                                <div class="img">
+                                <div class="img1">
                                     <img src="https://media.newyorker.com/photos/60747954c920e996bd1e486d/1:1/w_1326,h_1326,c_limit/Battan-FearlessTaylorsVersion.jpg">
-                                </div>
                                 <p>Fearless - Taylor Swift</p>
-                                <div class="img2">
-                                    <img src="https://png.pngtree.com/png-vector/20220728/ourmid/pngtree-png-music-player-background-png-image_6089907.png" alt="Music Player">
+                                    <img src="images/icon2.png" alt="Music Player">
                                 </div>
                             </div>
                         </div>
@@ -143,17 +134,15 @@
                         </div>
                     </div>
                 </div>
-    
+
                 <div class="container-box">
                     <div class="flip-container">
                         <div class="front">
                             <div class="black-box">
-                                <div class="img">
+                                <div class="img1">
                                     <img src="https://i.scdn.co/image/ab67616d0000b2738540f1aa50ce035b4e9cdfa7">
-                                </div>
                                 <p>To the Bone - Pamungkas</p>
-                                <div class="img2">
-                                    <img src="https://png.pngtree.com/png-vector/20220728/ourmid/pngtree-png-music-player-background-png-image_6089907.png" alt="Music Player">
+                                    <img src="images/icon2.png" alt="Music Player">
                                 </div>
                             </div>
                         </div>
@@ -162,7 +151,6 @@
                         </div>
                     </div>
                 </div>
-    
             </div>
         </div>
     </section>
@@ -192,6 +180,7 @@
         </div>
     </div>
 </section>
+
     
     <!-- Message modal -->
     <div id="messageModal" class="modal">
@@ -201,6 +190,25 @@
         </div>
     </div>
     
+    <style>
+   /* Modal styles */
+#messageModal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    display: flex; /* Use Flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+ 
+    </style>
+
     <footer>
         <div class="container">
             <p>&copy; 2024 Ala Christian</p>
@@ -250,9 +258,11 @@
             });
         });
 
-        document.querySelectorAll('.container-box').forEach(container => {
-            container.addEventListener('click', () => {
-                container.querySelector('.flip-container').classList.toggle('flipped');
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.container-box').forEach(container => {
+                container.addEventListener('click', () => {
+                    container.querySelector('.flip-container').classList.toggle('flipped');
+                });
             });
         });
 
