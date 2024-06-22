@@ -181,13 +181,6 @@
 </section>
 
     
-    <!-- Message modal -->
-    <div id="messageModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <p>This page is still under construction, awaits for our next love story</p>
-        </div>
-    </div>
     
     <style>
    /* Modal styles */
@@ -264,32 +257,6 @@
                 });
             });
         });
-
-        var modal = document.getElementById("messageModal");
-        var icon = document.querySelector(".question-icon");
-        var closeBtn = document.querySelector(".close");
-
-        // Show modal when the icon is clicked
-        icon.addEventListener("click", function() {
-            modal.style.display = "flex"; // Use flex to ensure the modal centers properly
-        });
-
-        // Close modal when the close button is clicked
-        closeBtn.addEventListener("click", function() {
-            modal.style.display = "none";
-        });
-
-        // Close modal when clicking outside of it
-        window.addEventListener("click", function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        });
-
-        // Ensure modal is hidden by default
-        window.onload = function() {
-            modal.style.display = "none";
-        };
         
         
     </script>
