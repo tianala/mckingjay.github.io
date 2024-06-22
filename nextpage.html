@@ -68,7 +68,7 @@
             <p1><span class="highlight1">(tap for back stories)</p1>
             <div class="container-group">
                 <div class="container-box">
-                    <div class="flip-container">
+                    <div class="flip-container" data-audio="audio1">
                         <div class="front">
                             <div class="black-box">
                                 <div class="img1">
@@ -85,7 +85,7 @@
                 </div>
 
                 <div class="container-box">
-                    <div class="flip-container">
+                    <div class="flip-container" data-audio="audio2">
                         <div class="front">
                             <div class="black-box">
                                 <div class="img1"> 
@@ -102,7 +102,7 @@
                 </div>
 
                 <div class="container-box">
-                    <div class="flip-container">
+                    <div class="flip-container" data-audio="audio3">
                         <div class="front">
                             <div class="black-box">
                                 <div class="img1">
@@ -119,7 +119,7 @@
                 </div>
 
                 <div class="container-box">
-                    <div class="flip-container">
+                    <div class="flip-container" data-audio="audio4">
                         <div class="front">
                             <div class="black-box">
                                 <div class="img1">
@@ -136,7 +136,7 @@
                 </div>
 
                 <div class="container-box">
-                    <div class="flip-container">
+                    <div class="flip-container" data-audio="audio5">
                         <div class="front">
                             <div class="black-box">
                                 <div class="img1">
@@ -154,6 +154,31 @@
         </div>
     </section>
     
+    <audio id="audio1">
+        <source src="audios/maki-dilaw.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <audio id="audio2">
+        <source src="audios/tj_monterde-palagi.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <audio id="audio3">
+        <source src="audios/bini-salamin_salamin.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <audio id="audio4">
+        <source src="audios/taylor_swift-fearless.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <audio id="audio5">
+        <source src="audios/pamungkas-to_the_bone.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
 
 <section class="two-column">
     <div class="container">
@@ -257,8 +282,30 @@
                 });
             });
         });
+            document.addEventListener('DOMContentLoaded', function() {
+                let currentlyPlaying = null;
         
+                document.querySelectorAll('.flip-container').forEach(container => {
+                    container.addEventListener('click', function() {
+                        const audioId = container.dataset.audio;
+                        const audio = document.getElementById(audioId);
         
+                        if (currentlyPlaying && currentlyPlaying !== audio) {
+                            currentlyPlaying.pause();
+                            currentlyPlaying.currentTime = 0;
+                        }
+        
+                        if (audio.paused) {
+                            audio.play();
+                            currentlyPlaying = audio;
+                        } else {
+                            audio.pause();
+                            audio.currentTime = 0;
+                            currentlyPlaying = null;
+                        }
+                    });
+                });
+            });      
     </script>
 </body>
 </html>
